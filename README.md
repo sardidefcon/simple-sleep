@@ -1,6 +1,6 @@
-# SimpleSleep
+<p align="center"><img src="https://i.ibb.co/F4NYxFwM/Simple-Sleep.png"/></p>
 
-Lightweight Paper plugin that skips the night when enough players are sleeping, or automatically when it becomes night.
+Simple Minecraft plugin for Paper that skips the night when enough players are sleeping or automatically
 
 ## Features
 
