@@ -1,0 +1,28 @@
+name: SimpleSleep
+main: com.simpleplugins.SimpleSleep.SimpleSleep
+version: 1.0.0
+api-version: "1.21"
+description: "A simple, lightweight and fast plugin to skip the nights."
+author: "sardidefcon"
+
+softdepend:
+  - Essentials
+
+commands:
+  sleep:
+    description: SimpleSleep commands (autoskip, toggle, phantoms, reload)
+    usage: /<command> <autoskip|toggle|phantoms|reload>
+
+permissions:
+  ssleep.toggle.autoskip:
+    description: Toggle auto-skip night on/off
+    default: op
+  ssleep.toggle:
+    description: Toggle sleep gamerule on/off
+    default: op
+  ssleep.reload:
+    description: Reload plugin configuration
+    default: op
+  ssleep.phantoms:
+    description: Toggle doInsomnia gamerule (phantoms on/off)
+    default: op

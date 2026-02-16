@@ -1,0 +1,54 @@
+##############################
+# SimpleSleep - Configuration
+# Developed by sardidefcon
+##############################
+
+# Prefix prepended to plugin command messages. Use & for color codes. Empty = no prefix.
+prefix: "&7[&6Sleep&7] &r"
+
+# When enabled, as soon as it becomes night the game will skip to the next day
+# Can be toggled in-game with /sleep autoskip
+auto-skip-night: false
+
+# When true, the native gamerule is applied (sleep can skip the night per percentage)
+# When false, the gamerule is set to 101 (sleep never skips the night)
+# Can be toggled in-game with /sleep toggle
+sleep-gamerule-enabled: true
+
+# Controls the native gamerule "doInsomnia"
+# true  = phantoms can spawn after 3 days without sleep
+# false = no phantoms will spawn
+spawn-phantoms: true
+
+# Native gamerule "playersSleepingPercentage" value (applied to overworlds when sleep-gamerule-enabled is true)
+# 0 or 1 = one player sleeping can skip the night
+# 2-100 = percentage of players in the world that must be sleeping to skip (e.g. 50 = half)
+# 101 or more = sleep does not skip the night (disabled)
+sleep-percentage: 50
+
+# When true and EssentialsX is installed, AFK players are not counted for sleep percentage
+# If true and EssentialsX is present, the plugin uses its own sleep logic instead of the native gamerule
+ignore-afk-players: true
+
+# Messages: action bar when sleeping, and plugin command responses.
+# Use & for color codes.
+messages:
+  # Shown in action bar when players enter or leave a bed. Leave empty to use vanilla message only.
+  # Placeholders: %sleeping%, %total%.
+  players-sleeping: "&e%sleeping%/%total% players sleeping"
+  # Shown when sleeping skips the night (overrides native \"Sleeping through this night\" if set).
+  sleeping-through-this-night: "&fSleeping through this night"
+  # Shown when auto-skip jumps the night (action bar to all players).
+  auto-skip: "&fThe night has been skipped"
+
+  # Messages returned when executing plugin commands. %command% = /sleep (or alias).
+  plugin-messages:
+    reload-success: "&aConfiguration reloaded"
+    autoskip-enabled: "&aAuto-skip night is now enabled"
+    autoskip-disabled: "&cAuto-skip night is now disabled"
+    toggle-enabled: "&aSleep gamerule is now enabled"
+    toggle-disabled: "&cSleep gamerule is now disabled"
+    phantoms-enabled: "&aPhantom generation is now enabled"
+    phantoms-disabled: "&cPhantom generation is now disabled"
+    no-permission: "&cYou do not have permission to run this command"
+    usage: "&7Usage: &f/%command% <autoskip|toggle|phantoms|reload>"
