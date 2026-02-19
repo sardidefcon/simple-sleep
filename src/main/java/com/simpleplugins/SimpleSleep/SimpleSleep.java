@@ -25,6 +25,7 @@ public class SimpleSleep extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         saveDefaultConfig();
+        ConfigUpdater.mergeWithDefaults(this);
         this.configManager = new ConfigManager(this);
 
         this.essentialsPlugin = findEssentialsPlugin();
@@ -179,7 +180,13 @@ public class SimpleSleep extends JavaPlugin implements Listener {
         return configManager;
     }
 
+    /**
+     * Merges defaults with existing config (adding only missing keys), reloads
+     * from disk, and applies sleep state. Existing user values are never
+     * overwritten. On failure, config and state are left unchanged.
+     */
     public void reloadPluginConfig() {
+        ConfigUpdater.mergeWithDefaults(this);
         reloadConfig();
         configManager.reload();
         this.essentialsPlugin = findEssentialsPlugin();
